@@ -1,6 +1,6 @@
 DOI: 10.1007/s00521-020-05124-x
 Paper Title: Volcano Eruption Algorithm for Solving Optimization Problems
-Authors: Eghbal Hosseini, Ali Safa, Kayhan Zrar Ghafoor, Danda B.Rawat, Mehrdad Saif, Xinan
+Authors: Eghbal Hosseini, Ali Safa, Kayhan Zrar Ghafoor, Danda B.Rawat, Mehrdad Saif, Xinan Yang
 Journal Name: Neural Computing and Applications
 Accepted Date: 	03 Jun 2020
 
