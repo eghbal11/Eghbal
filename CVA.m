@@ -1,6 +1,11 @@
+DOI: 
+Paper Title: COVID-19 Optimizer Algorithm, Modeling and Controlling of Coronavirus Distribution Process
+Authors: Eghbal Hosseini, Kayhan Zrar Ghafoor, Ali Safaa Sadiq, Mohsen Guizani, Ali Emrouznejad
+Journal Name: IEEE Journal of Biomedical and Health Informatics
+Accepted Date: 	18 Jul 2020
 ****************** Outbreak and Spreading***************
 ******************************************************
-% this part relates to section III-A, equations (1), (2), figure 1 – (a), (b)
+% this part relates to section III-A, equations (1), (2), figure 1 â€“ (a), (b)
 % (xop,yop) is optimal solution
 % m is objective function
 % (x0,y0) is initial solution 
@@ -88,7 +93,7 @@ end
 end
 ************* Recovery, Remove and Transmission**********
 ******************************************************
-% this part relates to section III-B, equations (3-6), figure 1 – (c), (d)
+% this part relates to section III-B, equations (3-6), figure 1 â€“ (c), (d)
 r=0;
 for j=floor((1-open)*n)+1 : p*n
 x0=x(j);y0=y(j); 
@@ -160,7 +165,7 @@ end
 end
 ************************ More Iterations*****************************
 *******************************************************************
-% this part relates to figure 1 – (e), (f)
+% this part relates to figure 1 â€“ (e), (f)
 for j=1 : (1-p)*n+1
 x0=x1(j);y0=y1(j); 
 m=exp(-(x0-4).^2-(y0-4).^2)+ exp(-(x0+4).^2-(y0-4).^2)+2* exp(-(x0).^2-(y0).^2)+2* exp(-(x0).^2-(y0+4).^2);
