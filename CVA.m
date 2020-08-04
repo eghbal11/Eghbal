@@ -1,4 +1,4 @@
-DOI: 
+DOI: 10.1109/JBHI.2020.3012487
 Paper Title: COVID-19 Optimizer Algorithm, Modeling and Controlling of Coronavirus Distribution Process
 Authors: Eghbal Hosseini, Kayhan Zrar Ghafoor, Ali Safaa Sadiq, Mohsen Guizani, Ali Emrouznejad
 Journal Name: IEEE Journal of Biomedical and Health Informatics
