@@ -1,0 +1,91 @@
+function [z]=linprog13(A,b,c)
+[m, n] = size(A);
+t=n;
+A = [A eye(m)];
+b = b(:);
+c = -c(:)';
+c = [c zeros(1,m+1)];
+A = [A b];
+for i=1: m
+    d(i)=0;
+    for j=1: n
+        d(i)=d(i)+A(i,j)*c(j);
+    end
+end
+min=b(1)/d(1);r=1;
+for j=1: m
+        k(j)=b(j)/d(j);
+        if(k(j)<min & d(j)>0)
+            min=k(j);r=j;
+        end
+end
+max=c(1);s=1;
+for i=1: n+m
+        if(c(i)>max & A(r,i)>0)
+            max=c(i);s=i;
+        end
+end
+A=vertcat(c,A);
+row=r+1;col=s;
+      A(row,:)= A(row,:)/A(row,col);
+      for i = 1:m+1
+         if i ~= row
+            A(i,:)= A(i,:)-A(i,col)*A(row,:);
+         end
+      end
+for i=1: n+m+1
+     c(i)=A(1,i);
+end
+for i=1: m
+     b(i)=A(i+1,n+m+1);
+end
+z= A(1,n+m+1);
+for i=1: n+m
+     f(i)=c(i);
+end
+u=0;
+while (1>0)
+   if all(f <= 0)
+   break;
+end
+max=c(1);s=1;
+for i=1: n+m
+        if(c(i)>max & i ~=r+t)
+            max=c(i);s=i;
+        end
+end
+min=inf;g=0;u=u+1;
+for j=1: m
+        if(A(j+1,s)>0)
+            g=1;
+            k(j)=b(j)/A(j+1,s);
+              if(k(j)<min)
+                min=k(j);r=j;
+              end
+        end
+end
+if (g==1)
+row=r+1;col=s;
+      A(row,:)= A(row,:)/A(row,col);
+      for i = 1:m+1
+         if i ~= row
+            A(i,:)= A(i,:)-A(i,col)*A(row,:);
+         end
+      end
+for i=1: n+m+1
+     c(i)=A(1,i);
+end
+for i=1: m
+     b(i)=A(i+1,n+m+1);
+end
+for i=1: n+m
+     f(i)=c(i);
+end
+end
+if (g==0 & u>200)
+disp(sprintf('\n              feasible region is unbounded'))
+ break;z= A(1,n+m+1)
+end 
+end
+z= A(1,n+m+1)
+end
